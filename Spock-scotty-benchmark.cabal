@@ -1,0 +1,20 @@
+name:                Spock-scotty-benchmark
+version:             0.1.0.0
+synopsis:            Benchmark comparison between Spock and scotty framework
+description:         
+license:             MIT
+license-file:        LICENSE
+author:              Alexander Thiemann <mail@agrafix.net>
+maintainer:          mail@agrafix.net
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable Spock-scotty-benchmark
+  main-is:             Main.hs
+  build-depends:       base >=4.6 && <4.7,
+                       Spock ==0.5.0.1,
+                       scotty ==0.6.*
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -O3 -threaded
