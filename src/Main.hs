@@ -4,7 +4,7 @@ module Main where
 import System.Environment
 
 import qualified Web.Scotty as Scotty
-import qualified Web.Spock as Spock
+import qualified Web.Spock.Simple as Spock
 
 main =
     do args <- getArgs
@@ -21,7 +21,7 @@ main =
                   do p <- Scotty.param "1"
                      Scotty.text p
          ["spock"] ->
-             Spock.spockT port id $
+             Spock.runSpock port $ Spock.spockT id $
              do Spock.get "/echo/hello-world" $
                   Spock.text "Hello World"
                 Spock.get "/echo/plain/:param" $
