@@ -22,8 +22,8 @@ On Arch with an i5 (i5-3317U), requests in 30 seconds, higher is better
 
 | Framework | GHC   | Version | no regex, no captures     | simple captures, no regex | regex captures |
 |-----------|-------|---------|---------------------------|---------------------------|----------------|
-| Spock     | 7.6.3 | 0.5.1.0 | **915515**                | **823222**                | **721531**     |
-| scotty    | 7.6.3 | 0.6.2.0 | 868201                    | 639017                    | 520735         |
+| Spock     | 7.8.4 | 0.7.10.0 | **915515**                | **823222**                | **721531**     |
+| scotty    | 7.8.4 | 0.10.1.0 | 868201                    | 639017                    | 520735         |
 
 Spock
 --------
