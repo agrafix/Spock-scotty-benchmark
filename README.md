@@ -20,8 +20,8 @@ Results
 
 On Arch with an i5 (i5-3317U), requests in 30 seconds, higher is better
 
-| Framework | GHC   | Version  | no regex, no captures     | simple captures, no regex | regex captures |
-|-----------|-------|----------|---------------------------|---------------------------|----------------|
+| Framework | GHC    | Version  | no regex, no captures     | simple captures, no regex | regex captures |
+|-----------|--------|----------|---------------------------|---------------------------|----------------|
 | Spock     | 7.10.1 | 0.7.10.0 | 782906                    | **734979**                | **661227**     |
 | scotty    | 7.10.1 | 0.10.1.0 | **835393**                | 692151                    | 524374         |
 
