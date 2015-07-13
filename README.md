@@ -18,12 +18,12 @@ How to run
 Results
 =====
 
-On my MacBook Pro retina (2012), requests in 30 seconds, higher is better
+On Arch with an i5 (i5-3317U), requests in 30 seconds, higher is better
 
-| Framework | GHC   | Version | no regex, no captures     | simple captures, no regex | regex captures |
-|-----------|-------|---------|---------------------------|---------------------------|----------------|
-| Spock     | 7.6.3 | 0.5.1.0 | **915515**                | **823222**                | **721531**     |
-| scotty    | 7.6.3 | 0.6.2.0 | 868201                    | 639017                    | 520735         |
+| Framework | GHC    | Version  | no regex, no captures     | simple captures, no regex | regex captures |
+|-----------|--------|----------|---------------------------|---------------------------|----------------|
+| Spock     | 7.10.1 | 0.7.10.0 | 782906                    | **734979**                | **661227**     |
+| scotty    | 7.10.1 | 0.10.1.0 | **835393**                | 692151                    | 524374         |
 
 Spock
 --------
@@ -33,36 +33,29 @@ Benchmarking http://localhost:8080/echo/hello-world (no regex, no captures)
 Running 30s test @ http://localhost:8080/echo/hello-world
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    12.78ms   11.14ms 690.72ms   99.74%
-    Req/Sec     3.98k   461.52     6.25k    77.35%
-  915515 requests in 30.00s, 135.33MB read
-  Socket errors: connect 0, read 399, write 0, timeout 48
-Requests/sec:  30521.68
-Transfer/sec:      4.51MB
+    Latency    16.85ms   27.80ms 847.75ms   99.31%
+    Req/Sec     3.28k   627.05    12.67k    94.91%
+  782906 requests in 30.02s, 127.67MB read
+Requests/sec:  26077.42
+Transfer/sec:      4.25MB
 Benchmarking http://localhost:8080/echo/plain/hello (simple captures, no regex)
 Running 30s test @ http://localhost:8080/echo/plain/hello
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    14.23ms    3.69ms 505.45ms   92.23%
-    Req/Sec     3.54k   343.95     4.94k    74.31%
-  823222 requests in 30.00s, 116.98MB read
-name:                Spock-scotty-benchmark
-version:             0.1.0.0
-synopsis:            Benchmark comparison between Spock and scotty framework
-description:
-  Socket errors: connect 0, read 384, write 0, timeout 39
-Requests/sec:  27441.24
-Transfer/sec:      3.90MB
+    Latency    18.85ms   39.35ms   1.09s    99.13%
+    Req/Sec     3.13k   706.56    10.78k    96.10%
+  734979 requests in 30.02s, 115.65MB read
+Requests/sec:  24480.10
+Transfer/sec:      3.85MB
 Benchmarking http://localhost:8080/echo/regex/42 (regex captures)
 Running 30s test @ http://localhost:8080/echo/regex/42
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    16.19ms    5.06ms 334.34ms   92.47%
-    Req/Sec     3.11k   345.15     5.78k    80.23%
-  721531 requests in 30.00s, 100.46MB read
-  Socket errors: connect 0, read 410, write 0, timeout 59
-Requests/sec:  24050.96
-Transfer/sec:      3.35MB
+    Latency    22.38ms   55.12ms   1.30s    98.94%
+    Req/Sec     2.77k   625.44    13.08k    94.20%
+  661227 requests in 30.02s, 102.16MB read
+Requests/sec:  22024.47
+Transfer/sec:      3.40MB
 ```
 
 scotty
@@ -73,30 +66,27 @@ Benchmarking http://localhost:8080/echo/hello-world (no regex, no captures)
 Running 30s test @ http://localhost:8080/echo/hello-world
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    13.36ms    3.77ms 387.55ms   94.39%
-    Req/Sec     3.78k   454.36     6.00k    77.51%
-  868201 requests in 30.00s, 128.34MB read
-  Socket errors: connect 0, read 433, write 0, timeout 76
-Requests/sec:  28940.82
-Transfer/sec:      4.28MB
+    Latency    15.87ms   27.48ms 866.32ms   99.32%
+    Req/Sec     3.53k   493.42    10.23k    95.83%
+  835393 requests in 30.03s, 136.23MB read
+Requests/sec:  27820.09
+Transfer/sec:      4.54MB
 Benchmarking http://localhost:8080/echo/plain/hello (simple captures, no regex)
 Running 30s test @ http://localhost:8080/echo/plain/hello
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    18.14ms    5.23ms 507.33ms   94.48%
-    Req/Sec     2.74k   311.43     5.41k    76.15%
-  639017 requests in 30.00s, 90.80MB read
-  Socket errors: connect 0, read 439, write 0, timeout 81
-Requests/sec:  21300.84
-Transfer/sec:      3.03MB
+    Latency    19.07ms   30.67ms 955.54ms   99.25%
+    Req/Sec     2.90k   550.93    10.98k    95.08%
+  692151 requests in 30.02s, 108.91MB read
+Requests/sec:  23054.96
+Transfer/sec:      3.63MB
 Benchmarking http://localhost:8080/echo/regex/42 (regex captures)
 Running 30s test @ http://localhost:8080/echo/regex/42
   8 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    22.41ms   11.64ms 798.38ms   97.71%
-    Req/Sec     2.22k   249.89     4.28k    79.83%
-  520735 requests in 30.00s, 72.51MB read
-  Socket errors: connect 0, read 421, write 0, timeout 68
-Requests/sec:  17357.70
-Transfer/sec:      2.42MB
+    Latency    28.64ms   68.53ms   1.52s    98.73%
+    Req/Sec     2.25k   589.30    10.99k    95.90%
+  524374 requests in 30.02s, 81.01MB read
+Requests/sec:  17465.17
+Transfer/sec:      2.70MB
 ```
