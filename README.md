@@ -18,7 +18,7 @@ How to run
 Results
 =====
 
-On my MacBook Pro retina (2012), requests in 30 seconds, higher is better
+On Arch with an i5 (i5-3317U), requests in 30 seconds, higher is better
 
 | Framework | GHC   | Version | no regex, no captures     | simple captures, no regex | regex captures |
 |-----------|-------|---------|---------------------------|---------------------------|----------------|
