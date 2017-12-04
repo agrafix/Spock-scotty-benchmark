@@ -6,6 +6,8 @@ Benchmark the two Haskell web frameworks [Spock](https://github.com/agrafix/Spoc
 How to run
 ==========
 
+Install `wrk` HTTP benchmarking tool. On ubuntu run `sudo apt install wrk`.
+
 ```bash
 > cabal update
 > cabal install --only-dependencies
