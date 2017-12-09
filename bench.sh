@@ -10,17 +10,17 @@ CHECK_PARAM=$(wget -qO- $PARAM_URL)
 CHECK_NUM=$(wget -qO- $REGEX_URL)
 
 if [[ "$CHECK_HELLO" != "Hello World" ]]; then
-    echo "Invalid $HELLO_URL repsonse! Expected 'hello' got '$CHECK_HELLO' (Is the server running?)"
+    echo "Invalid $HELLO_URL response! Expected 'hello' got '$CHECK_HELLO' (Is the server running?)"
     exit 1
 fi
 
 if [[ "$CHECK_PARAM" != "hello" ]]; then
-    echo "Invalid $PARAM_URL repsonse! Expected 'hello' got '$CHECK_PARAM' (Is the server running?)"
+    echo "Invalid $PARAM_URL response! Expected 'hello' got '$CHECK_PARAM' (Is the server running?)"
     exit 1
 fi
 
 if [[ "$CHECK_NUM" != "42" ]]; then
-    echo "Invalid $REGEX_URL repsonse! Expected '42' got '$CHECK_NUM' (Is the server running?)"
+    echo "Invalid $REGEX_URL response! Expected '42' got '$CHECK_NUM' (Is the server running?)"
     exit 1
 fi
 
